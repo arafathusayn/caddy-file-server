@@ -20,7 +20,7 @@ Example configuration for Caddy File Server that denies access via Public IP add
 	}
 
 	handle @allowed_networks {
-		file_server / browse
+		file_server browse
 	}
 
 	handle @public_ip {
