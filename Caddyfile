@@ -1,0 +1,24 @@
+{
+	auto_https off
+	admin off
+}
+
+:5001 {
+	root /path/to/your/public/directory
+
+	@allowed_networks {
+		remote_ip private_ranges 127.0.0.1/8 172.16.0.0/12 192.168.0.0/16
+	}
+
+	@public_ip {
+		not remote_ip private_ranges 127.0.0.1/8 172.16.0.0/12 192.168.0.0/16
+	}
+
+	handle @allowed_networks {
+		file_server browse
+	}
+
+	handle @public_ip {
+		respond "Access denied" 403
+	}
+}
