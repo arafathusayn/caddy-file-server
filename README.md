@@ -1,7 +1,7 @@
 ### Static File Server with Directory Listing in Caddy
 Example configuration for Caddy File Server that denies access via Public IP address, only allowing Private IP access
 
-> `Caddyfile`
+> [`Caddyfile`](./Caddyfile)
 ```
 {
 	auto_https off
